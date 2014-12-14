@@ -4,6 +4,7 @@ class AthleteController  extends \BaseController {
     protected $athlete;
     
     function __construct (Athlete $athlete){
+        $this->beforeFilter('auth');
         $this->athlete = $athlete;
     }
     

@@ -5,6 +5,7 @@ class CityController extends \BaseController {
     protected $city;
     
     function __construct (City $city){
+         $this->beforeFilter('auth');
         $this->city = $city;
     }
     
@@ -51,7 +52,8 @@ class CityController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		 $city = City::find($id);
+        return View::make('city.show')->with('city', $city);
 	}
 
 

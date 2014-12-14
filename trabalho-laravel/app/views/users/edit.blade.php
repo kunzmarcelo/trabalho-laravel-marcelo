@@ -1,14 +1,13 @@
 @extends('base')
 
-
 @section('title')
-    Cadastro de Usuário
+    Editar Usuário
 @stop
 
 
 @section('content')
-     <div class="painel">
-      {{ Form::open(['route' => 'users.store', 'method'=>'post', 'class'=>'form']) }}
+   <div class="painel">
+    {{ Form::model($user, ['route' => ['users.update',$user->id], 'method'=>'put']) }}
         <div>
             {{ Form::label('name', 'Nome') }}
             {{ Form::text('name',null,array('class'=>'form-caixa-texto')) }}
@@ -30,7 +29,7 @@
             {{ $errors->first('password') }}
         </div>
         <div>
-            {{Form::submit('cadastrar',array('class'=>'botao'))}}
+            {{Form::submit('Salvar')}}
         </div>
     {{ Form::close() }}
 </div>

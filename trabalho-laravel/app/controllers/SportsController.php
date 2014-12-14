@@ -5,6 +5,7 @@ class SportsController extends \BaseController {
     protected $sports;
     
     function __construct (Sports $sports){
+         $this->beforeFilter('auth');
         $this->sports = $sports;
     }
     
@@ -50,7 +51,8 @@ class SportsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$sports = Sports::find($id);
+        return View::make('sports.show')->with('sports', $sports);
 	}
 
 

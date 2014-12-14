@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-<table>
+<table class="tabela-borda">
 	<thead>
 		<tr>
 			<th>#</th>
@@ -22,7 +22,7 @@
 		@foreach ($team as $team)
 		<tr>
 			<td>{{$team->id}}</td>
-			<td><a href="/team/{{$team->id}}">{{$team->name}}</a></td>			
+			<td><a href="/team/{{$team->id}}">{{$team->name}}</a></td>
 			<td>{{$team->responsable}}</td>
 			<td>{{$team->sports}}</td>
 			<td>{{$team->created_at}}</td>

@@ -6,21 +6,23 @@ Editar Time
 
 
 @section('content')
-    {{ Form::model($team, ['route' => ['team.update',$team->id], 'method'=>'put']) }}
+   <div class="painel"> 
+    {{ Form::model($team, ['route' => ['team.update',$team->id], 'method'=>'put', 'class'=>'form']) }}
          <div>
             {{ Form::label('name', 'Nome') }}
-            {{ Form::text('name') }}          
+            {{ Form::text('name',null,array('class'=>'form-caixa-texto')) }}          
         </div>
          <div>
             {{ Form::label('responsable', 'Responsável') }}
-            {{ Form::text('responsable') }}          
+            {{ Form::text('responsable',null,array('class'=>'form-caixa-texto')) }}          
         </div>
         <div>
-            {{ Form::label('sports', 'Esportes') }}
-            {{ Form::text('sports') }}          
+            {{ Form::hidden('sports', 'Esportes') }}
+            {{ Form::hidden('sports') }}          
         </div>
         <div>
             {{Form::submit('Salvar')}}
         </div>
     {{ Form::close() }}
+</div>
 @stop

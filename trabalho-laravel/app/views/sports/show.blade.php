@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Usuário: {{$athlete->name}}
+    Usuário: {{$sports->name}}
 @stop
 
 
@@ -11,15 +11,13 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Nome</th>               
-                <th>E-mail</th>                                       
+                <th>Nome</th>                
             </tr>
         </thead>
         <tbody>
              <tr>
-                <td>{{ $athlete->id }}</td>
-                <td>{{ $athlete->name}}</td>
-                <td>{{ $athlete->email }}</td>
+                <td>{{ $sports->id }}</td>
+                <td>{{ $sports->description}}</td>                
             </tr>
         </tbody>
     </table>

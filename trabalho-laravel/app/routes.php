@@ -2,12 +2,13 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
-Route::resource('users', 'UsersController');
+
 //Resource() mapeia as URLs de funções RESTful
 Route::resource('athlete', 'AthleteController');
 Route::resource('sports', 'SportsController');
 Route::resource('team', 'TeamController');
 Route::resource('city', 'CityController');
+Route::resource('users', 'UsersController');
 
 Route::get('/login', [
             'as' => 'login', 
@@ -24,6 +25,11 @@ Route::resource('sessions','SessionsController', [
 ]);
 
 
+
+Route::filter('auth', function()
+{
+	if (Auth::guest()) return Redirect::route('login');
+});
 
 /*
 

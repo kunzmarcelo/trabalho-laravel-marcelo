@@ -4,6 +4,7 @@ class SessionsController extends \BaseController {
 
 	public function create()
 	{
+        
 		return View::make('sessions.create');
 	}
 	
@@ -17,7 +18,7 @@ class SessionsController extends \BaseController {
         if($auth)
             return Redirect::intended('/')->withErrors('Usuário, '. Auth::user()->name .' Logado com sucesso');
         else 
-            return Redirect::back()->withInput()->withInput()->withErrors("Usuário ou senha incorretos");
+            return Redirect::back()->withInput()->withInput()->withErrors("Usuario e senha incorretos");
         
 		//return Input::all();
 	}
@@ -25,7 +26,7 @@ class SessionsController extends \BaseController {
 	public function destroy()
 	{
 		Auth::logout();
-        return Redirect::intended('/')->withErrors("usuário deslogado");
+        return Redirect::intended('/')->withErrors("usuario deslogado");
 	}
 
 

@@ -6,15 +6,17 @@ Editar Esportes
 
 
 @section('content')
+   <div class="painel">
     {{ Form::model($sports, ['route' => ['sports.update',$sports->id], 'method'=>'put']) }}
            
            <div>
             {{ Form::label('description', 'Descrição') }}
-            {{ Form::text('description') }}
+            {{ Form::text('description',null,array('class'=>'form-caixa-texto')) }}
             <!--{{ $errors->first('name') }}-->
         </div>
          <div>
-            {{Form::submit('Salvar')}}
+            {{Form::submit('Salvar',array('class'=>'botao'))}}
         </div>
     {{ Form::close() }}
+</div>
 @stop

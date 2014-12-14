@@ -5,6 +5,7 @@ class TeamController extends \BaseController {
     protected $team;
 	 
     function __construct (Team $team){
+         $this->beforeFilter('auth');
         $this->team = $team;
     }
     
@@ -37,7 +38,8 @@ class TeamController extends \BaseController {
 	
 	public function show($id)
 	{
-		//
+		$team = Team::find($id);
+        return View::make('team.show')->with('team', $team);
 	}
 
 

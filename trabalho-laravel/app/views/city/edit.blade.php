@@ -6,14 +6,16 @@ Editar Cidades
 
 
 @section('content')
+   <div class="painel">
     {{ Form::model($city, ['route' => ['city.update',$city->id], 'method'=>'put']) }}
      <div>
             {{ Form::label('name', 'Nome') }}
-            {{ Form::text('name') }}
+            {{ Form::text('name',null,array('class'=>'form-caixa-texto')) }}
             <!--{{ $errors->first('name') }}-->
         </div>
           <div>
-            {{Form::submit('Salvar')}}
+            {{Form::submit('Salvar', array('class'=>'botao'))}}
         </div>
     {{ Form::close() }}
+</div>
 @stop

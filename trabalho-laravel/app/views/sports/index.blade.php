@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-<table>
+<table class="tabela tabela-borda">
 	<thead>
 		<tr>
 			<th>#</th>

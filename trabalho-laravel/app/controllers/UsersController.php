@@ -5,7 +5,7 @@ class UsersController extends \BaseController {
 	 protected $user;
     
     function __construct(User $user){
-        //$this->beforeFilter('auth');
+        $this->beforeFilter('auth');
         $this->user = $user;
     }
 
@@ -16,9 +16,11 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-        $users = $this->user->all();
+        
+         $users = $this->user->all();
         
 		return View::make('users.index')->with('users',$users); 
+       
 	}
 
 

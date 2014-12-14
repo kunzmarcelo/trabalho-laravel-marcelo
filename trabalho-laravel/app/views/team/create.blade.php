@@ -6,22 +6,24 @@
 @stop
 
 @section('content')
-    {{ Form::open(['route' => 'team.store', 'method'=>'post']) }}
+   <div class="painel"> 
+    {{ Form::open(['route' => 'team.store', 'method'=>'post','class'=>'form']) }}
          <div>
             {{ Form::label('name', 'Nome') }}
-            {{ Form::text('name') }}          
+            {{ Form::text('name',null,array('class'=>'form-caixa-texto')) }}          
         </div>
          <div>
             {{ Form::label('responsable', 'Responsável') }}
-            {{ Form::text('responsable') }}          
+            {{ Form::text('responsable',null,array('class'=>'form-caixa-texto')) }}          
         </div>
         <div>
-            {{ Form::label('sports', 'Esportes') }}
-            {{ Form::text('sports') }}          
+            {{ Form::hidden('sports', 'Esportes') }}
+            {{ Form::hidden('sports',1,array('class'=>'form-caixa-texto')) }}          
         </div>
         
-        <div>
-            {{Form::submit('Cadastrar')}}
+        <div class="botao">
+            {{Form::submit('Cadastrar', array('class'=>'botao'))}}
         </div>
     {{ Form::close() }}
+</div>
 @stop
